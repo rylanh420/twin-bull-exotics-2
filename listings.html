@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicles in Stock – Twin Bull Exotics</title>
+
+  <style>
+    body {
+      background-color: #0a0a0a;
+      margin: 0;
+      font-family: 'Trebuchet MS', sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* ================================
+       FLOATING GLOW NAVBAR (TEXT LOGO)
+    =================================*/
+    .navbar {
+      width: 100%;
+      padding: 15px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 4px solid #ffd700;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; /* <-- align items to left */
+      gap: 30px; /* space between button and logo */
+      box-shadow: 0 0 25px rgba(255,215,0,0.25);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .navbar h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(255,255,255,0.35);
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .navbar button {
+      padding: 10px 25px;
+      background-color: #111;
+      color: white;
+      border-radius: 10px;
+      border: 2px solid #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.25s;
+      white-space: nowrap;
+      order: -1; /* <-- move button to far left */
+    }
+
+    .navbar button:hover {
+      background-color: white;
+      color: #111;
+      transform: scale(1.08);
+    }
+
+    @media(max-width: 480px) {
+      .navbar {
+        padding: 15px 10px;
+        gap: 15px;
+      }
+      .navbar h1 {
+        font-size: 1.5rem;
+      }
+      .navbar button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Push content below fixed nav */
+    .nav-spacer {
+      height: 90px;
+    }
+
+    /* ================================
+       HEADER WITH GLOSS EFFECT
+    =================================*/
+    .exotic-header {
+      text-align: center;
+      padding: 60px 20px 90px;
+      background-color: #000;
+      border-bottom: 4px solid #ffd700;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .exotic-header h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+
+    /* MOVING GLOSS LIGHT SWEEP */
+    .gloss {
+      position: absolute;
+      top: 0;
+      left: -200%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255,255,255,0.25) 50%,
+        transparent 100%
+      );
+      transform: skewX(-20deg);
+      animation: glossMove 5s infinite;
+      opacity: 0.3;
+    }
+
+    @keyframes glossMove {
+      0% { left: -200%; }
+      100% { left: 200%; }
+    }
+
+    /* ================================
+       CAR GRID
+    =================================*/
+    .listings-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 45px;
+      padding: 80px 20px;
+      max-width: 1700px;
+      margin: auto;
+      animation: fadeIn 1.3s ease forwards;
+    }
+
+    .fade {
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      width: 400px;
+      height: 480px;
+      background-color: #111;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+      text-decoration: none;
+      color: white;
+      transition: 0.25s;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: scale(1.06);
+      box-shadow: 0 25px 65px rgba(255,255,255,0.35);
+    }
+
+    .card img {
+      width: 100%;
+      height: 72%;
+      object-fit: cover;
+    }
+
+    .card h2 {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(180deg, #111, #191919);
+      border-top: 1px solid #333;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- FLOATING NAVBAR -->
+  <div class="navbar">
+    <button onclick="window.location.href='index.html'">Back to Home</button>
+    <h1>Twin Bull Exotics©</h1>
+  </div>
+
+  <div class="nav-spacer"></div>
+
+  <!-- HEADER -->
+  <header class="exotic-header fade">
+    <div class="gloss"></div>
+    <h1>Vehicles in Stock</h1>
+  </header>
+
+  <!-- LISTINGS -->
+  <main class="listings-grid fade">
+
+    <a href="./listing1/index.html" class="card">
+      <img src="./listing1/images/main.png">
+      <h2>Audi R8 Performance</h2>
+    </a>
+
+    <a href="./listing2/index.html" class="card">
+      <img src="./listing2/images/main.png">
+      <h2>Audi R8 OG</h2>
+    </a>
+
+    <a href="./listing3/index.html" class="card">
+      <img src="./listing3/images/main.png">
+      <h2>BMW M4 Competition</h2>
+    </a>
+
+    <a href="./listing4/index.html" class="card">
+      <img src="./listing4/images/main.png">
+      <h2>Audi R8 Performance</h2>
+    </a>
+
+    <a href="./listing5/index.html" class="card">
+      <img src="./listing5/images/main.png">
+      <h2>BMW M4 Competition</h2>
+    </a>
+
+  </main>
+
+</body>
+</html>
