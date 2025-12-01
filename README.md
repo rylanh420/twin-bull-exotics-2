@@ -1,2 +1,2 @@
-# twin-bull-exotics-2
+# twin-bull-exotics-2.github.io
 yeah
